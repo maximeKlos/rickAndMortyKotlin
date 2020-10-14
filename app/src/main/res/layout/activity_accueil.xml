@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/container"
     tools:context=".activities.AccueilActivity">
 
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress" />
 
@@ -18,7 +19,7 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mot de passe"
+        android:text="@string/mot_de_passe"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword" />
 
@@ -27,12 +28,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/email_gmail_com"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -40,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,14 +63,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="signin"
-            android:text="INSCRIPTION" />
+            android:text="@string/inscription" />
 
         <Button
             android:id="@+id/connect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="connect"
-            android:text="CONNEXION" />
+            android:text="@string/connexion" />
     </LinearLayout>
 
     <Button
@@ -76,29 +79,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:onClick="signout"
-        android:text="DECONNEXION"
+        android:text="@string/deconnexion"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <TextView
-        android:id="@+id/textviewuser"
+    <Button
+        android:id="@+id/buttonInfos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Utilisateur connecté :"
+        android:onClick="affichageInfosUser"
+        android:text="@string/information_compte"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signout" />
 
-    <TextView
-        android:id="@+id/textViewUserConnected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Aucun"
-        app:layout_constraintStart_toStartOf="@+id/textviewuser"
-        app:layout_constraintTop_toBottomOf="@+id/textviewuser" />
 </androidx.constraintlayout.widget.ConstraintLayout>

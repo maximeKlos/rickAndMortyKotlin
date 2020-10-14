@@ -21,7 +21,8 @@ class AccueilActivity : AppCompatActivity() {
     lateinit var connexion: Button
     lateinit var signin: Button
     lateinit var signout: Button
-    lateinit var connectedUser: TextView
+    lateinit var buttonInfos: Button
+    var user: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,7 @@ class AccueilActivity : AppCompatActivity() {
         connexion = findViewById(R.id.connect)
         signin = findViewById(R.id.signin)
         signout = findViewById(R.id.signout)
-        connectedUser = findViewById(R.id.textViewUserConnected)
+        buttonInfos = findViewById(R.id.buttonInfos)
     }
 
     override fun onStart(){
@@ -43,7 +44,7 @@ class AccueilActivity : AppCompatActivity() {
     }
 
     fun updateUI(user: FirebaseUser?) {
-            connectedUser.text = mAuth.currentUser?.email ?: "Aucun"
+            this.user = user
     }
 
     fun signin(view: View) {
@@ -104,5 +105,13 @@ class AccueilActivity : AppCompatActivity() {
         signin.visibility = View.VISIBLE
         connexion.visibility = View.VISIBLE
         updateUI(null)
+    }
+
+    fun affichageInfosUser(view: View) {
+        supportFragmentManager.beginTransaction()
+            .addToBackStack("InfoConnectedUserFragment")
+            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+            .replace(R.id.container, InfoConnectedUserFragment.newInstance(user))
+            .commit()
     }
 }
