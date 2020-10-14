@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "241889649021",
+    "firebase_url": "https://rickanmortykotlin.firebaseio.com",
+    "project_id": "rickanmortykotlin",
+    "storage_bucket": "rickanmortykotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241889649021:android:89ead6715de31e59106c14",
+        "android_client_info": {
+          "package_name": "com.example.rickanmortykotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241889649021-pujrusphep4iiash8n2c9g6tig1kl3vg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdYrpMDmVvBaDsGIpT9lFAUuKwOg-dlBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241889649021-pujrusphep4iiash8n2c9g6tig1kl3vg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
